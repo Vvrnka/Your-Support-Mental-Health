@@ -1,9 +1,10 @@
 import { Groq } from "groq-sdk";
 
+// Mengambil API Key dari env dengan aman
 const GROQ_API = import.meta.env.VITE_GROQ;
 
 const groq = new Groq({
-    apiKey: GROQ_API,
+    apiKey: GROQ_API || "dummy_key_for_build", // Diberi fallback agar proses 'npm run build' tidak macet jika env tidak terbaca di GitHub Actions
     dangerouslyAllowBrowser: true,
 });
 
