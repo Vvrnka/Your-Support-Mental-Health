@@ -1,0 +1,149 @@
+/* Global Styles */
+body {
+  background: radial-gradient(circle at top, #1e1e2f, #141423);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(to right, #ff8c00, #e52e71);
+  background-clip: text;              /* standar */
+  -webkit-background-clip: text;      /* vendor prefix */
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 4px 20px rgba(229, 46, 113, 0.8);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0px 4px 10px rgba(229, 46, 113, 0.5);
+  }
+  100% {
+    text-shadow: 0px 4px 20px rgba(229, 46, 113, 0.8);
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+input {
+  padding: 1rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 8px rgba(229, 46, 113, 0.7);
+}
+
+button {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff8c00, #e52e71);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 4px 15px rgba(229, 46, 113, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 25px rgba(229, 46, 113, 0.7);
+}
+
+.output-container {
+  background-color: #1f1f1f;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  white-space: normal;
+  word-wrap: break-word;
+  color: #f8f8f2;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.output-container pre {
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #ff8c00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  form {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .output-container {
+    padding: 1rem;
+  }
+}
